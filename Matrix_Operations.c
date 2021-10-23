@@ -1,5 +1,6 @@
 //We can only add or subtract matrices if their dimensions are the same
 //while passing mutlidimensional array as arguments in the paramter all the other dimesion excpets first must have size bound mentioned. 
+//For matrix multiplication, the number of columns in the first matrix must be equal to the number of rows in the second matrix. 
 #include<stdio.h>
 #define size 10
 void takingData(int arr[][size],int no,int row, int col)

@@ -32,7 +32,7 @@ bool isPerfect(long long int n)
 int main()
 {
 	cout << "Below are all perfect numbers till 10000\n";
-	for (long long n =2; n<100000000; n++)
+	for (long long n =2; n<1000000; n++)
 		if (isPerfect(n))
 			cout << n << " is a perfect number\n";
 

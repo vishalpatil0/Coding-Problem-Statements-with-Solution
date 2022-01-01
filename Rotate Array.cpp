@@ -1,14 +1,21 @@
-//this array rotation takes less time as comapared to the other program present in this directory named array rotation.
+/*this array rotation takes less time as comapared to the other program present in this directory named array rotation.
+for rotation of string and array 
+Left rotation :   
+               i-> reverse the array from 0th index to (number of rotation - 1)
+               ii-> reverse the array from (number of rotation) index to n-1 index
+               iii-> reverse the entrire array
+Right rotation :
+                i-> Reverse the entire array.
+                ii-> Reverse the array from 0 index to (number of rotation - 1)th index.
+                iii-> Reverse the array from (number of rotation)th index to n-1 index.               
+*/
 #include<iostream>
 using namespace std;
 void reversed(int arr[],int start,int end)
 {
-    int temp;
-    for (int i = start,j=end;i<=(start+end)/2; i++,j--)
+    while(start<=end)
     {
-        temp=arr[i];
-        arr[i]=arr[j];
-        arr[j]=temp;
+        swap(arr[start++],arr[end--]);
     }
 }
 int main()
@@ -25,19 +32,25 @@ int main()
     int d;
     cout<<"Enter number of rotation = ";
     cin>>d;
-    //for left rotation
-    // reversed(arr,0,d-1);
-    // reversed(arr,d,n-1);
-    // reversed(arr,0,n-1);
-    //for right rotation
-    reversed(arr,n-d,n-1);
-    reversed(arr,0,n-d-1);
-    reversed(arr,0,n-1);
+    d%=n;
+    if(d!=0)
+    {
+        //for left rotation
+        // reversed(arr,0,d-1);
+        // reversed(arr,d,n-1);
+        // reversed(arr,0,n-1);
+        //for right rotation
+        reversed(arr,0,n-1);
+        reversed(arr,0,d-1);
+        reversed(arr,d,n-1);
+    }
+    
 
     cout<<"After rotate array is as follow "<<endl;
     for(int x:arr)
     {
-        cout<<x<<endl;
+        cout<<x<<' ';
     }
+    cout<<endl;
     return 0;
 }

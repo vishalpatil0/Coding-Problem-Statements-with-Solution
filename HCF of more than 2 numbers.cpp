@@ -3,15 +3,15 @@ using namespace std;
 class HCF
 {
 public:
-    int largest(int arr[], int length)
+    int smallest(int arr[], int length)
     {
-        int max = 0;
+        int min = INT32_MAX;
         for (int i = 0; i < length; i++)
         {
-            if (max < arr[i])
-                max = arr[i];
+            if (min > arr[i])
+                min = arr[i];
         }
-        return max;
+        return min;
     }
     bool check(int arr[], int length, int hcf)
     {
@@ -35,12 +35,13 @@ public:
     }
     int process(int arr[], int n)
     {
-        int hcf=0, temp = largest(arr, n);
-        for (int i = 1; i <= temp; i++)
+        int hcf=0, min = smallest(arr, n);
+        for (int i = min; i >= 1; i--)
         {
             if (check(arr, n, i))
             {
                 hcf=i;
+                return hcf;
             }
         }
         return hcf;
@@ -59,7 +60,6 @@ int main()
         cin >> arr[i];
     }
     int hcf = h1.process(arr, n);
-    cout << "HCF : " << hcf << endl;
     h1.print(arr, n, hcf); //print method of the class.
     return 0;
 }

@@ -1,3 +1,11 @@
+/*
+1-> sort the both array
+2-> take 2 variable i,j with initial value as 0
+3-> iterate the loop with condition of length of array 1 should be greater than i and length of array 2 should be greater than array 2
+4-> if element of array_1 at i_th position is smaller than element of array_2 at j_th position then increment i with 1.
+5-> if element of array_2 at j_th position is smaller than element of array_1 at i_th position then increment j with 1.
+5-> otherwise in third ifelse print the element and increment both i and j bcoz that is our common element.
+*/
 #include<iostream>
 #include<algorithm>
 using namespace std;

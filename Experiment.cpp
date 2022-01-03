@@ -1,12 +1,28 @@
+/*
+12345
+ 2345
+  345
+   45
+    5
+*/
 #include<iostream>
-#include<algorithm>
 using namespace std;
 int main()
 {
-    int arr[]={1,2,3,4,5};
-    rotate(arr,arr+2,arr+5);
-    rotate(arr,arr+5-2,arr+5);
-    for(int x:arr) cout<<x<<' ';
-    cout<<endl;
+    for(int i=1;i<=5;i++)
+    {
+        for(int j=1;j<=5;j++)
+        {
+            if(j>=i)
+            {
+                cout<<j;
+            }
+            else
+            {
+                cout<<' ';
+            }
+        }
+        cout<<endl;
+    }
     return 0;
 }

@@ -1,14 +1,24 @@
+#include<vector>
 #include<iostream>
 using namespace std;
+void toLower(string &str)
+{
+    for(int i=0;i<str.length();i++)
+    {
+        if(str[i]>=65 && str[i]<=90)
+        {
+            str[i]=str[i]-'A'+'a';
+        }
+    }
+}
 int main()
 {
-    int arr[4]={};
-    arr[2]++;
-    arr[2]++;
-    arr[2]++;
-    arr[2]++;
-    cout<<arr[2]<<endl;
-    arr[2]--;
-    cout<<arr[2]<<endl;
+    string s="aabb";
+    vector<char>chars(s.begin(),s.end());
+    cout<<"chars size --> "<<chars.size()<<endl;
+    for(char x:chars)
+    {
+        cout<<x<<" done "<<endl;
+    }
     return 0;
 }

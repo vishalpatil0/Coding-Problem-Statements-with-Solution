@@ -6,9 +6,9 @@ int main()
     int number,decimal=0,raised_to=0;
     cout<<"Enter the number = ";
     cin>>number;
-    while(number!=0)
+    while(number)
     {
-        if(number%10==1)
+        if(number&1)
         {
             decimal+=pow(2,raised_to);
         }
